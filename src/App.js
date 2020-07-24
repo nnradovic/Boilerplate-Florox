@@ -1,22 +1,15 @@
 
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchApi } from "./api/fetchApi";
-
-
+import React from "react";
+import Test from './components/Test/Test'
 function App() {
 
-  const { test } = useSelector(state => state.testComment);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetchApi(dispatch)
-  }, [dispatch]);
+
   return (
-    < div className="xx" >
-      {console.log(test)}
-      <p>Hello</p>
+    <div className="xx" >
+      <Test />
     </ div >
+
   );
 }
 

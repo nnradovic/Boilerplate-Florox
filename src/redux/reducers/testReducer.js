@@ -1,8 +1,8 @@
 
 import {
-    testFetchStarted, testFetchError, testFetchSuccess
+    testFetchStarted, testFetchError, testFetchSuccess, testDeleteError, testDeleteSuccess, testCreateSuccess
 } from '../action/testAction';
-import { PENDING, LOADED, LOADING, ERROR } from '../../constants/statusType'
+import { PENDING, LOADED, LOADING, ERROR, DELETE, CREATED } from '../../constants/statusType'
 
 const initialsState = { test: [], status: PENDING };
 export default (state = initialsState, action) => {
@@ -13,7 +13,18 @@ export default (state = initialsState, action) => {
             return { test: action.payload, status: LOADED };
         case testFetchError().type:
             return { test: [], status: ERROR };
+        case testDeleteSuccess().type:
+            return {
+                test: state.test.data.resultData.filter(tes => {
+                    return tes.id !== action.payload;
+                }), status: DELETE
+            };
+        case testCreateSuccess().type:
+            return { test: action.payload, ...state, status: CREATED };
+        case testDeleteError().type:
+            return { test: [], status: ERROR };
         default:
             return state;
     }
 };
+
