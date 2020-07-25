@@ -1,13 +1,13 @@
 
 import React from "react";
-import Test from './components/Test/Test'
+import TestContainer from "./components/Test/index";
 function App() {
 
 
 
   return (
     <div className="xx" >
-      <Test />
+      <TestContainer />
     </ div >
 
   );

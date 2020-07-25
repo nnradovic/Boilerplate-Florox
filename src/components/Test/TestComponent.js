@@ -1,20 +1,16 @@
 
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { readApi, deleteApi, createApi, updateApi } from "../../api/testApi";
 import { useForm } from "react-hook-form";
 
-function App() {
+function TestComponent({ test }) {
 
-  const { test } = useSelector(state => state.testComment);
   const dispatch = useDispatch();
   const { handleSubmit, register } = useForm();
   const [isEdit, setIsEdit] = useState(false)
   const [iD, setID] = useState(null)
 
-  useEffect(() => {
-    readApi(dispatch)
-  }, [dispatch]);
 
   const deletePipe = (id) => {
     deleteApi(dispatch, id)
@@ -30,9 +26,7 @@ function App() {
       })
   }
 
-
-
-  const onSave = (values) => {
+  const onEditSave = (values) => {
     console.log(iD);
     updateApi(dispatch, values, iD)
       .then(res => {
@@ -45,7 +39,6 @@ function App() {
     setID(id)
     setIsEdit(true)
 
-
   }
 
 
@@ -56,7 +49,7 @@ function App() {
         return (<li key={key}><h5 >{t.title}</h5> <p >{t.text}</p><button onClick={() => deletePipe(t.id)}>Delete</button>
           <button onClick={() => editPipe(t.id)} >Edit</button>
 
-          {isEdit && iD === t.id ? <form onSubmit={handleSubmit(onSave)}>
+          {isEdit && iD === t.id ? <form onSubmit={handleSubmit(onEditSave)}>
             <input
               className="form-control"
               placeholder="Diamter"
@@ -124,4 +117,4 @@ function App() {
   );
 }
 
-export default App;
+export default TestComponent;
