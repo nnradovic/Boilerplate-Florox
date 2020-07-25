@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { readApi, deleteApi, createApi, updateApi } from "../../api/testApi";
 import { useForm } from "react-hook-form";
+import './TestStyle.scss'
 
 function TestComponent({ test }) {
 

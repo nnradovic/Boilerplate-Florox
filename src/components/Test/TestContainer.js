@@ -16,9 +16,7 @@ function TestContainer() {
 
 
     return (
-        <div >
-            <TestComponent test={test} />
-        </div>
+        <TestComponent test={test} />
 
     );
 }
