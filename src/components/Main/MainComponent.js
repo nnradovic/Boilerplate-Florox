@@ -1,16 +1,14 @@
 import React from 'react';
 import Header from '../Header/HeaderComponent';
 import RouterComponent from '../../Route'
+import './MainStyle.scss'
 function MainComponent() {
-
-
     return (
-        <div style={{ backgroundColor: "blue", height: 500 }}>
+        <div className="main" >
             <Header />
             Main
             <RouterComponent />
         </div>
-
     )
 }
 

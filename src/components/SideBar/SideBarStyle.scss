@@ -1,0 +1,60 @@
+@import "../../styling/mixins.scss";
+@import "../../styling/variable.scss";
+
+.sidebar {
+    background-color: $panel-primary;
+    padding: 10px;
+    height: 100vh;
+
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-end;
+        .logo {
+            font-size: 24px;
+            color: $red;
+        }
+        a {
+            text-decoration: none;
+            color: $green;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
+    p {
+        margin-left: 3%;
+        margin-bottom: 0;
+        color: $text-primary;
+        font-size: 14px;
+    }
+
+    ul {
+        margin-top: 0px;
+        padding-left: 16px;
+        li {
+            list-style: none;
+            width: 186px;
+
+            a {
+                color: $text-primary;
+                font-size: 12px;
+                text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                .icons {
+                    margin-right: 3%;
+                }
+            }
+        }
+        li:hover {
+            background-color: $hover;
+            width: 100%;
+        }
+    }
+    .stick-bottom {
+        position: absolute;
+        bottom: 0;
+    }
+}

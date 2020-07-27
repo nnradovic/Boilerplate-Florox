@@ -49,7 +49,6 @@ function TestComponent({ test }) {
       !!test.data ? test.data.resultData.map((t, key) => {
         return (<li key={key}><h5 >{t.title}</h5> <p >{t.text}</p><button onClick={() => deletePipe(t.id)}>Delete</button>
           <button onClick={() => editPipe(t.id)} >Edit</button>
-
           {isEdit && iD === t.id ? <form onSubmit={handleSubmit(onEditSave)}>
             <input
               className="form-control"
@@ -81,40 +80,43 @@ function TestComponent({ test }) {
   }
 
   return (
-    < div className="xx" >
+    <div style={{ backgroundColor: "gray", height: 250 }}>
       {console.log(test)}
-      <p>Hello</p>
-
       <form onSubmit={handleSubmit(onSubmit)}>
+        <label>
+          Diamter
         <input
-          className="form-control"
-          placeholder="Title of the comment"
-          name="text"
-          defaultValue={null}
-          ref={register({
-            required: "Required"
-          })}
-        />
+            className="form-control"
+            placeholder=""
+            name="text"
+            defaultValue={null}
+            ref={register({
+              required: "Required"
+            })}
+          />
+        </label><br />
+        <label>
+          Length
         <input
-          className="form-control"
-          placeholder="Title of the comment"
-          name="title"
-          defaultValue={null}
-          ref={register({
-            required: "Required"
-          })}
-        />
+            className="form-control"
+            placeholder=""
+            name="title"
+            defaultValue={null}
+            ref={register({
+              required: "Required"
+            })}
+          />
+        </label><br />
         <button color="primary" type="submit">
           Post
-            </button>{" "}
+        </button>{" "}
       </form>
       <div>
         <ul>
           {list(test)}
         </ul>
       </div>
-    </ div >
-
+    </div>
   );
 }
 

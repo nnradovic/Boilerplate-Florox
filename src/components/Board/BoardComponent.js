@@ -3,8 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import SideBarComponent from '../SideBar/SideBarComponent'
 import MainComponent from '../Main/MainComponent';
 function BoardComponent() {
-
-
     return (
         <Grid container spacing={0}>
             <Grid md={2} >
@@ -14,7 +12,6 @@ function BoardComponent() {
                 <MainComponent />
             </Grid>
         </Grid>
-
     )
 }
 
