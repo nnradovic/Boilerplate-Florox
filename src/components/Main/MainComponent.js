@@ -6,7 +6,6 @@ function MainComponent() {
     return (
         <div className="main" >
             <Header />
-            Main
             <RouterComponent />
         </div>
     )

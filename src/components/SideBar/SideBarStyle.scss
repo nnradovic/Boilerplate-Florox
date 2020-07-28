@@ -3,8 +3,14 @@
 
 .sidebar {
     background-color: $panel-primary;
-    padding: 10px;
-    height: 100vh;
+
+    .selected {
+        background-color: $hover;
+    }
+
+    .frame {
+        padding: 10px;
+    }
 
     h1 {
         margin-top: 0px;
@@ -30,13 +36,12 @@
     }
 
     ul {
-        margin-top: 0px;
-        padding-left: 16px;
+        // margin-top: 0px;
+        padding-left: 0px;
         li {
             list-style: none;
-            width: 186px;
-
             a {
+                padding-left: 12%;
                 color: $text-primary;
                 font-size: 12px;
                 text-decoration: none;
@@ -52,9 +57,5 @@
             background-color: $hover;
             width: 100%;
         }
-    }
-    .stick-bottom {
-        position: absolute;
-        bottom: 0;
     }
 }

@@ -13,6 +13,7 @@ function TestComponent({ test }) {
   const [iD, setID] = useState(null)
 
 
+
   const deletePipe = (id) => {
     deleteApi(dispatch, id)
       .then(res => {
@@ -20,14 +21,16 @@ function TestComponent({ test }) {
       })
   }
 
-  const onSubmit = (values) => {
+  const onSubmit = (values, e) => {
     createApi(dispatch, values)
       .then(res => {
         readApi(dispatch)
+        e.target.reset();
+
       })
   }
 
-  const onEditSave = (values) => {
+  const onEditSave = (values, e) => {
     console.log(iD);
     updateApi(dispatch, values, iD)
       .then(res => {
