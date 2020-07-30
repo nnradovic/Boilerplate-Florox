@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './HeaderStyle.module.scss'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Search from "../../components/Search/Search"
 
 
 
@@ -23,6 +23,8 @@ function HeaderComponent() {
     const handleClickAway = () => {
         setOpen(false);
     };
+
+
     return (
         <div>
             <div className={styles.header} >
@@ -52,11 +54,16 @@ function HeaderComponent() {
 
                 </div>
             </div>
-            {isSearch ? <div >
-                <SearchIcon className={styles.searchIcon} />
-
-                <input placeholder="Search" className={styles.search} />
-            </div> : null}
+            {isSearch ? <Search
+                showBtn={true}
+                btnText="Filter"
+                isFilter={true}
+                isAdd={false}
+                showMenu={true}
+                text="Map View"
+                isMapIcon={true}
+                isListIcon={false}
+            /> : null}
         </div>
     )
 }

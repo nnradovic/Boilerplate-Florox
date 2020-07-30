@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../Header/HeaderComponent';
+import Header from '../Header';
 import RouterComponent from '../../Route'
-import './MainStyle.scss'
+import styles from './MainStyle.module.scss'
 function MainComponent() {
     return (
-        <div className="main" >
+        <div className={styles.main} >
             <Header />
             <RouterComponent />
         </div>

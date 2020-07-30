@@ -1,6 +1,6 @@
 
 import React from "react";
-import BoardComponent from "./components/Board/BoardComponent";
+import BoardComponent from "./screens/Board/BoardComponent";
 import './styling/app.scss'
 function App() {
 

@@ -3,6 +3,8 @@
 
 .sidebar {
     background-color: $panel-primary;
+    height: 100vh;
+    position: relative;
 
     .selected {
         background-color: $hover;
@@ -36,7 +38,7 @@
     }
 
     ul {
-        // margin-top: 0px;
+        margin-top: 0px;
         padding-left: 0px;
         li {
             list-style: none;
@@ -57,5 +59,11 @@
             background-color: $hover;
             width: 100%;
         }
+    }
+
+    ul:last-child {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }

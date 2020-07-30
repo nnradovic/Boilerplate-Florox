@@ -1,0 +1,9 @@
+@import "../../styling/mixins.scss";
+@import "../../styling/variable.scss";
+
+.myButton {
+    background: $green !important;
+    span {
+        color: white;
+    }
+}

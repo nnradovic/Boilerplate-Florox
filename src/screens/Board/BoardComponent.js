@@ -8,7 +8,7 @@ function BoardComponent() {
             <Grid md={2} >
                 <SideBarComponent />
             </Grid>
-            <Grid md={10}>
+            <Grid md={10} >
                 <MainComponent />
             </Grid>
         </Grid>
