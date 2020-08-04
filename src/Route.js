@@ -1,7 +1,7 @@
 import React from 'react';
-import MapView from './screens/MapView/MapViewComponent';
-import ListView from './screens/ListView/ListViewComponent'
-import Test from './screens/Test/index'
+import MapView from './pages/MapView/MapViewComponent';
+import ListView from './pages/ListView/ListViewComponent'
+import Test from './pages/Test/index'
 import { Switch, Route, } from "react-router-dom";
 function RouterComponent() {
 

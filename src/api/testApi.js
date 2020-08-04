@@ -1,13 +1,13 @@
-import env from "../env";
 import axios from "axios";
 import { GET, DELETE, POST, PUT } from '../constants/statusType'
 import { testFetchStarted, testFetchError, testFetchSuccess, testDeleteError, testDeleteSuccess, testCreateSuccess } from '../redux/action/testAction'
+import { API_URL_TEST } from '../env'
 
 async function readApi(dispatch) {
     let resource = 'Comment'
     const options = {
         method: GET,
-        url: `${env.backend_url}/${resource}`,
+        url: `${API_URL_TEST}/${resource}`,
     };
     dispatch(testFetchStarted())
     try {
@@ -24,7 +24,7 @@ async function readSingleApi(dispatch, id) {
     let resource = 'Comment'
     const options = {
         method: GET,
-        url: `${env.backend_url}/${resource}/${id}`,
+        url: `${API_URL_TEST}/${resource}/${id}`,
     };
     dispatch(testFetchStarted())
     try {
@@ -41,7 +41,7 @@ async function createApi(dispatch, values) {
     let resource = 'Comment'
     const options = {
         method: POST,
-        url: `${env.backend_url}/${resource}`,
+        url: `${API_URL_TEST}/${resource}`,
         data: values
     };
     try {
@@ -57,7 +57,7 @@ async function updateApi(dispatch, values, id) {
     let resource = 'Comment'
     const options = {
         method: PUT,
-        url: `${env.backend_url}/${resource}/${id}`,
+        url: `${API_URL_TEST}/${resource}/${id}`,
         data: Object.assign(
             {
                 id: id,
@@ -75,7 +75,7 @@ async function deleteApi(dispatch, id) {
     let resource = 'Comment'
     const options = {
         method: DELETE,
-        url: `${env.backend_url}/${resource}/${id}`
+        url: `${API_URL_TEST}/${resource}/${id}`
     };
     try {
         let result = await axios(options)

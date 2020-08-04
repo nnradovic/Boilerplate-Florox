@@ -1,0 +1,29 @@
+.border-0 {
+  border: 0;
+}
+
+.rounded-top {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+.rounded-bottom {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+.border-shadow {
+  box-shadow: $border-shadow
+}
+
+.border-shadow-top {
+  box-shadow: $border-shadow-top;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $gray-100 !important;
+}
+
+.dashed-border {
+  border: 2px dashed $gray-100;
+}

@@ -1,0 +1,56 @@
+// VENDORS
+@import "abstracts/bootstrap-variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+//RESPONSIVE
+@import "./mixins.scss";
+
+// ---
+// ABSTRACTS
+// Sass tools, helper files, variables, functions,
+// mixins and other config files.
+@import "./abstracts/variables";
+
+// ---
+// BASE
+// Standard styles such as resets and typographic rules,
+// which are commonly used throughout your project.
+@import "base/base";
+@import "base/borders";
+@import "base/colors";
+@import "base/layout";
+@import "base/typography";
+@import "base/utilities";
+
+// ---
+// COMPONENTS
+// Styles for buttons, carousels, sliders,
+// and similar page components
+
+// components/atoms
+@import "components/atoms/icons";
+@import "components/atoms/block";
+@import "components/atoms/block-bookmark";
+@import "components/atoms/hr";
+
+// components/molecules
+@import "components/molecules/buttons";
+@import "components/molecules/tabs";
+
+// components/ogranisms
+@import "components/organisms/block-code-snippet";
+@import "../components/organisms/ItemTree/item-tree";
+@import "../components/organisms/Modal/modals";
+
+//pages
+@import "../pages/SideBar/SideBarStyle.scss";
+@import "../pages/Header/HeaderStyle.scss";
+@import "../pages/Main/MainStyle.scss";
+@import "../pages/PipeInputTab/PipeInputTabStyle.scss";
+@import "../pages/PipeMap/PipeMapStyle.scss";
+@import "../pages/TreeViewList/TreeViewListStyle.scss";
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
