@@ -4,12 +4,10 @@ import Test from './components/Test/index'
 function App() {
 
 
+function App() {
 
   return (
-    <div className="xx" >
-      <Test />
-    </ div >
-
+    <BoardComponent />
   );
 }
 
