@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { readApi, deleteApi, createApi, updateApi } from "../../api/testApi";
 import { useForm } from "react-hook-form";
+import { Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import './TestStyle.scss'
+library.add(faBars)
 
 function TestComponent({ test }) {
 
@@ -72,6 +77,7 @@ function TestComponent({ test }) {
               })}
             />
             <button color="primary" type="submit">
+
               Save
             </button>{" "}
           </form>
@@ -83,43 +89,48 @@ function TestComponent({ test }) {
   }
 
   return (
-    <div style={{ backgroundColor: "gray", height: 250 }}>
-      {console.log(test)}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          Diamter
+    <Row >
+      <Col md={{ span: 6, offset: 6 }} >
+        <FontAwesomeIcon icon={faBars} />
+      </Col>
+      <Col md={{ span: 6, offset: 6 }} >
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>
+            Diamter
         <input
-            className="form-control"
-            placeholder=""
-            name="text"
-            defaultValue={null}
-            ref={register({
-              required: "Required"
-            })}
-          />
-        </label><br />
-        <label>
-          Length
+              className="form-control"
+              placeholder=""
+              name="text"
+              defaultValue={null}
+              ref={register({
+                required: "Required"
+              })}
+            />
+          </label><br />
+          <label>
+            Length
         <input
-            className="form-control"
-            placeholder=""
-            name="title"
-            defaultValue={null}
-            ref={register({
-              required: "Required"
-            })}
-          />
-        </label><br />
-        <button color="primary" type="submit">
-          Post
+              className="form-control"
+              placeholder=""
+              name="title"
+              defaultValue={null}
+              ref={register({
+                required: "Required"
+              })}
+            />
+          </label><br />
+          <button color="primary" type="submit">
+            Post
         </button>{" "}
-      </form>
-      <div>
+
+        </form>
+      </Col >
+      <Col md={6}>
         <ul>
           {list(test)}
         </ul>
-      </div>
-    </div>
+      </Col>
+    </Row >
   );
 }
 

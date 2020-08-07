@@ -23,32 +23,7 @@
 @import "base/utilities";
 
 // ---
-// COMPONENTS
-// Styles for buttons, carousels, sliders,
-// and similar page components
-
-// components/atoms
-@import "components/atoms/icons";
-@import "components/atoms/block";
-@import "components/atoms/block-bookmark";
-@import "components/atoms/hr";
-
-// components/molecules
-@import "components/molecules/buttons";
-@import "components/molecules/tabs";
-
-// components/ogranisms
-@import "components/organisms/block-code-snippet";
-@import "../components/organisms/ItemTree/item-tree";
-@import "../components/organisms/Modal/modals";
-
-//pages
-@import "../pages/SideBar/SideBarStyle.scss";
-@import "../pages/Header/HeaderStyle.scss";
-@import "../pages/Main/MainStyle.scss";
-@import "../pages/PipeInputTab/PipeInputTabStyle.scss";
-@import "../pages/PipeMap/PipeMapStyle.scss";
-@import "../pages/TreeViewList/TreeViewListStyle.scss";
+// PAGES
 
 body {
     padding: 0px;

@@ -1,13 +1,10 @@
 
 import React from "react";
-import Test from './components/Test/index'
-function App() {
-
-
+import Test from './pages/Test/index'
 function App() {
 
   return (
-    <BoardComponent />
+    <Test />
   );
 }
 
