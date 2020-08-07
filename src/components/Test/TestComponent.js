@@ -1,20 +1,18 @@
 
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { readApi, deleteApi, createApi, updateApi } from "../../api/testApi";
 import { useForm } from "react-hook-form";
+import './TestStyle.scss'
 
-function App() {
+function TestComponent({ test }) {
 
-  const { test } = useSelector(state => state.testComment);
   const dispatch = useDispatch();
   const { handleSubmit, register } = useForm();
   const [isEdit, setIsEdit] = useState(false)
   const [iD, setID] = useState(null)
 
-  useEffect(() => {
-    readApi(dispatch)
-  }, [dispatch]);
+
 
   const deletePipe = (id) => {
     deleteApi(dispatch, id)
@@ -23,17 +21,16 @@ function App() {
       })
   }
 
-  const onSubmit = (values) => {
+  const onSubmit = (values, e) => {
     createApi(dispatch, values)
       .then(res => {
         readApi(dispatch)
+        e.target.reset();
+
       })
   }
 
-
-
-  const onSave = (values) => {
-    console.log(iD);
+  const onEditSave = (values, e) => {
     updateApi(dispatch, values, iD)
       .then(res => {
         readApi(dispatch)
@@ -45,7 +42,6 @@ function App() {
     setID(id)
     setIsEdit(true)
 
-
   }
 
 
@@ -55,8 +51,7 @@ function App() {
       !!test.data ? test.data.resultData.map((t, key) => {
         return (<li key={key}><h5 >{t.title}</h5> <p >{t.text}</p><button onClick={() => deletePipe(t.id)}>Delete</button>
           <button onClick={() => editPipe(t.id)} >Edit</button>
-
-          {isEdit && iD === t.id ? <form onSubmit={handleSubmit(onSave)}>
+          {isEdit && iD === t.id ? <form onSubmit={handleSubmit(onEditSave)}>
             <input
               className="form-control"
               placeholder="Diamter"
@@ -87,41 +82,43 @@ function App() {
   }
 
   return (
-    < div className="xx" >
-      {console.log(test)}
-      <p>Hello</p>
-
+    <div style={{ backgroundColor: "gray", height: 250 }}>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <label>
+          Diamter
         <input
-          className="form-control"
-          placeholder="Title of the comment"
-          name="text"
-          defaultValue={null}
-          ref={register({
-            required: "Required"
-          })}
-        />
+            className="form-control"
+            placeholder=""
+            name="text"
+            defaultValue={null}
+            ref={register({
+              required: "Required"
+            })}
+          />
+        </label><br />
+        <label>
+          Length
         <input
-          className="form-control"
-          placeholder="Title of the comment"
-          name="title"
-          defaultValue={null}
-          ref={register({
-            required: "Required"
-          })}
-        />
+            className="form-control"
+            placeholder=""
+            name="title"
+            defaultValue={null}
+            ref={register({
+              required: "Required"
+            })}
+          />
+        </label><br />
         <button color="primary" type="submit">
           Post
-            </button>{" "}
+        </button>{" "}
       </form>
       <div>
         <ul>
           {list(test)}
         </ul>
       </div>
-    </ div >
-
+    </div>
   );
 }
 
-export default App;
+export default TestComponent;
