@@ -1,7 +1,8 @@
 
 import React from "react";
-import BoardComponent from "./pages/Board/BoardComponent";
-import './styles/app.scss'
+import Test from './components/Test/index'
+function App() {
+
 
 function App() {
 
